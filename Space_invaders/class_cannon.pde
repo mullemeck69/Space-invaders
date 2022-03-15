@@ -24,6 +24,14 @@ class Cannon {
       }
     }
     constrain(xpos, 0, width);
+    if (xpos<0){
+      xpos=0;
+    }
+     if (xpos>width){
+      xpos=width;
+    }
+    
+   
   }
 
   void render() {
