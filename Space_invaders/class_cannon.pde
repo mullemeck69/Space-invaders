@@ -2,6 +2,8 @@ class Cannon {
 
   float xpos;
 
+  boolean fired = false;
+
   Cannon(float _xpos) {
     xpos = _xpos;
   }
@@ -12,8 +14,8 @@ class Cannon {
   }
 
   void update() {
+    
     if (keyPressed) {
-
       switch(keyCode) {
       case LEFT:
         xpos -= 10;
@@ -22,16 +24,27 @@ class Cannon {
         xpos += 10;
         break;
       }
+
+      switch(key) {
+      case ' ':
+        if (!fired) {
+          bullets.add(new Bullet());
+          fired = true;
+        }
+        break;
+      }
     }
-    constrain(xpos, 0, width);
-    if (xpos<0){
+
+    if (!keyPressed) {
+      fired = false;
+    }
+
+    if (xpos<0) {
       xpos=0;
     }
-     if (xpos>width){
+    if (xpos>width) {
       xpos=width;
     }
-    
-   
   }
 
   void render() {
