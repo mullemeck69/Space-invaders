@@ -39,11 +39,11 @@ class Cannon {
       fired = false;
     }
 
-    if (xpos<0) {
-      xpos=0;
+    if (xpos<50) {
+      xpos=50;
     }
-    if (xpos>width) {
-      xpos=width;
+    if (xpos>width - 50) {
+      xpos=width - 50;
     }
   }
 
