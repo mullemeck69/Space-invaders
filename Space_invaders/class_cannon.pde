@@ -50,6 +50,6 @@ class Cannon {
   void render() {
     rectMode(CENTER);
     fill(255);
-    rect(xpos, height - 30, 100, 10);
+    rect(xpos, height - 30, 75, 10);
   }
 }
