@@ -1,14 +1,14 @@
 class Enemy {
 
-  //float xpos, ypos;
+
   color col;
-  
+
   PVector pos;
 
   Enemy(color _col, float _xpos, float _ypos) {
-    
-    pos = new PVector(0,0);
-    
+
+    pos = new PVector(0, 0);
+
     col = _col;
     pos.x = _xpos;
     pos.y = _ypos;
@@ -20,7 +20,7 @@ class Enemy {
   }
 
   void update() {
-    if (frameCount % 180 == 0) {
+    if (frameCount % 50 == 0) {
       pos.y = pos.y + 10;
     }
   }
@@ -33,6 +33,7 @@ class Enemy {
   boolean checkCollision(ArrayList<Bullet> bullets) {
     for (Bullet bullet : bullets) {
       if (pos.dist(bullet.pos) < 20) {
+        bullets.remove(bullet);
         return true;
       }
     }

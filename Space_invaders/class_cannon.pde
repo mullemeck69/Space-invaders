@@ -14,7 +14,7 @@ class Cannon {
   }
 
   void update() {
-    
+
     if (keyPressed) {
       switch(keyCode) {
       case LEFT:
